@@ -1,0 +1,286 @@
+<!-- Register action starts -->
+<section>
+  <div class="container">
+    <div class="row g-0">
+      <div class="col-md-4 mb-0 mb-lg-0 d-lg-block bg-img">
+        <div class="col-md-4">
+          <div class="card custom-card">
+            <div class="card-body">
+              <p class="card-text">
+                Lorem ipsum is simply dummy text of the printing and typesetting
+                industry.
+              </p>
+              <p class="fw-bold mb-0">Salma Mohamed</p>
+              <p>Founder, Soliter Salon</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 mb-5 mb-lg-0" style="background-color: #f5f6f9">
+        <div class="card-body p-5">
+          <p class="float-end">
+            Having a trouble ?
+            <a
+              [routerLink]="['/']"
+              class="fw-bold text-decoration-none bold custom-color"
+              >Get help</a
+            >
+          </p>
+          <h2 class="fw-bold mt-5 pt-5">Start your business now</h2>
+          <p class="mb-5">
+            Creating your company is just a few step away,
+            <br />
+            Enter your email address to continue.
+          </p>
+          <form [formGroup]="form" (ngSubmit)="submit()" #userForm="ngForm">
+            <div class="row">
+              <div class="form-group col-md-6 mb-4">
+                <label class="form-label" for="firstName">First Name</label>
+                <input
+                  type="text"
+                  id="firstName"
+                  class="form-control round"
+                  [placeholder]="'Enter your first name'"
+                  formControlName="firstName"
+                />
+                <div
+                  *ngIf="
+                    firstName?.invalid &&
+                    (firstName?.dirty || firstName?.touched)
+                  "
+                  class="text-danger"
+                >
+                  <small *ngIf="firstName?.hasError('required')">
+                    First name is required.
+                  </small>
+                  <small *ngIf="firstName?.hasError('minLength')">
+                    The minimum length for first name is 1 character.
+                  </small>
+                  <small *ngIf="firstName?.hasError('maxLength')">
+                    The maximum length for first name is 50 characters.
+                  </small>
+                  <small *ngIf="firstName?.hasError('pattern')">
+                    The first name should be characters only.
+                  </small>
+                </div>
+              </div>
+              <div class="form-group col-md-6 mb-4">
+                <label class="form-label" for="lastName">Last Name</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  class="form-control round"
+                  [placeholder]="'Enter your last name'"
+                  formControlName="lastName"
+                />
+                <div
+                  *ngIf="
+                    lastName?.invalid && (lastName?.dirty || lastName?.touched)
+                  "
+                  class="text-danger"
+                >
+                  <small *ngIf="lastName?.hasError('required')">
+                    Last name is required.
+                  </small>
+                  <small *ngIf="lastName?.hasError('minLength')">
+                    The minimum length for last name is 1 character.
+                  </small>
+                  <small *ngIf="lastName?.hasError('maxLength')">
+                    The maximum length for last name is 50 characters.
+                  </small>
+                  <small *ngIf="lastName?.hasError('pattern')">
+                    The last name should be characters only.
+                  </small>
+                </div>
+              </div>
+              <div class="form-group col-md-6 mb-4">
+                <label class="form-label" for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control round"
+                  [placeholder]="'Enter your email address'"
+                  formControlName="email"
+                />
+                <div
+                  *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+                  class="text-danger"
+                >
+                  <small *ngIf="email?.hasError('required')">
+                    Email address is required.
+                  </small>
+                  <small *ngIf="email?.hasError('email')">
+                    Email address must be correct email format.
+                  </small>
+                </div>
+              </div>
+              <div class="form-group col-md-6 mb-4">
+                <label class="form-label" for="phone">Phone Number</label>
+                <div class="input-group">
+                  <div class="input-group-append">
+                    <span class="phone">
+                      <i
+                        class="flag-icon-sa flag-icon flag-icon-squared font-medium-3 blue-grey darken-4 m-1"
+                      ></i>
+                      <span class="border-end country-code px-1">+966</span>
+                    </span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="phone"
+                    aria-describedby="phonHelp"
+                    placeholder="Enter your phone number"
+                    formControlName="phone"
+                  />
+                </div>
+                <div
+                  *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)"
+                  class="text-danger"
+                >
+                  <small *ngIf="phone?.hasError('required')">
+                    Phone number is required.
+                  </small>
+                  <small *ngIf="phone?.hasError('pattern')">
+                    Invalid phone Number.
+                  </small>
+                </div>
+              </div>
+              <div class="form-group col-md-6 mb-4">
+                <label class="form-label" for="password">Password</label>
+                <div class="input-group">
+                  <input
+                    [type]="fieldTextType ? 'password' : 'text'"
+                    id="password"
+                    class="form-control round"
+                    style="margin-right: 0px"
+                    [placeholder]="'Enter your password'"
+                    formControlName="password"
+                  />
+
+                  <div class="input-group-append">
+                    <span
+                      class="input-group-text"
+                      style="padding-top: 10px; padding-bottom: 10px"
+                    >
+                      <i
+                        class="fa font-medium-1"
+                        [ngClass]="{
+                          'fa-eye-slash': fieldTextType,
+                          'fa-eye': !fieldTextType
+                        }"
+                        (click)="toggleFieldTextType()"
+                      ></i>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  *ngIf="
+                    password?.invalid && (password?.dirty || password?.touched)
+                  "
+                  class="text-danger"
+                >
+                  <small *ngIf="password?.hasError('required')">
+                    Password is required.
+                  </small>
+                  <small *ngIf="password?.hasError('pattern')">
+                    Password must contain at least one number and one special
+                    character.
+                  </small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-check col-md-6">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  formControlName="isAgree"
+                  id="isAgree"
+                />
+                <div>
+                  <span class="form-check-label"> Agree to the</span>
+                  <a [routerLink]="['/']" class="text-decoration-none mx-1"
+                    >privacy policy</a
+                  >
+                  <span>and</span>
+                  <a [routerLink]="['/']" class="text-decoration-none mx-1"
+                    >terms &amp; conditions</a
+                  >
+                </div>
+              </div>
+              <div class="form-group col-6 d-flex justify-content-end mt-2">
+                <button
+                  type="submit"
+                  class="btn btn-raised round custom-btn px-3"
+                >
+                  <span class="mx-1 text-uppercase">Next</span>
+                  <i
+                    class="fa fa-long-arrow-right"
+                    style="padding-left: 40px"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Register action ends -->
+
+<!-- confirm modal starts -->
+<ng-template #confirmModalRef let-c="close" let-d="dismiss">
+  <div class="modal-header float-start">
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="d('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <div class="d-flex justify-content-center align-items-center container">
+      <div class="card py-2 text-center">
+        <img
+          class="mx-auto d-block"
+          src="assets/imgs/verify.png"
+          width="150px"
+          height="120px"
+        />
+        <h5 class="m-0 bold fs-2">Verification code</h5>
+        <span class="mobile-text fs-6"
+          >Please enter the verification code sent to your phone number **34
+        </span>
+        <div class="d-flex flex-row mt-5">
+          <input
+            type="text"
+            class="form-control text-center fs-5"
+            autofocus=""
+            value="1"
+          />
+          <input type="text" class="form-control text-center fs-5" value="5" />
+          <input type="text" class="form-control text-center fs-5" />
+          <input type="text" class="form-control text-center fs-5" />
+        </div>
+        <div class="mt-4 mb-2">
+          <span
+            >This code will be sent again within
+            <span class="text-info bold px-1">59</span>seconds</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn custom-btn mx-auto d-block w-50 mb-5 text-uppercase"
+      (click)="verify()"
+    >
+      Verify
+    </button>
+  </div>
+</ng-template>
+<!-- confirm modal ends -->

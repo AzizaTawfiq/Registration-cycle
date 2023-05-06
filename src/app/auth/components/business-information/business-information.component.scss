@@ -1,0 +1,13 @@
+.custom-btn{
+  background-color: #635ca8;
+  color:white;
+}
+
+.btn-check:checked + .btn, :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show {
+  background-color:rgb(244, 238, 238);
+  span{
+    background-color: #6ac7bb;
+    border:none;
+    color:white;
+  }
+}

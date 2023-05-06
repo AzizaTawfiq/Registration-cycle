@@ -1,0 +1,118 @@
+.form-check {
+  padding-left: 2.5em;
+}
+
+.custom-btn{
+  background-color: #635ca8;
+  color:white;
+}
+
+.custom-color{
+  color: #635ca8;
+}
+
+.bg-img{
+  background-image: url('/assets/imgs/register-img.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.phone {
+  padding-top: 4px;
+  border: 2px solid #c1bddb;
+  background-color: #efeef6;
+  display: inline-block;
+  height: 37px;
+}
+.phone:focus {
+  color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+.phone input {
+  display: inline-block;
+  width: auto;
+  border: none;
+}
+.phone input:focus {
+  box-shadow: none;
+}
+
+.flag-icon.flag-icon-squared {
+  width: 2em;
+}
+
+.country-code{
+  color:gray;
+}
+
+.modal-header .btn-close {
+  margin-left: 0px;
+}
+
+
+.card {
+  width: 350px;
+  padding: 10px;
+  border-radius: 20px;
+  background: #fff;
+  border: none;
+  height: 350px;
+  position: relative;
+}
+
+.mobile-text {
+  color: #989696b8;
+  font-size: 15px;
+}
+
+.form-control {
+  margin-right: 12px;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #ff8880;
+  outline: 0;
+  box-shadow: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.custom-card{
+  width: 300px;
+  height: 182px;
+  top: 536px;
+  left: 167px;
+}
+
+@media screen and (max-width: 980px) {
+  .custom-card {
+    width: 212px;
+    height: 119px;
+    top: 94px;
+    left: 167px;
+    font-size: 10px;
+  }
+}
+
+
+
+
+
+
+
+

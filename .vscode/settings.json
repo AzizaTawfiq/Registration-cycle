@@ -1,0 +1,116 @@
+{
+  "editor.fontSize": 16,
+  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "workbench.iconTheme": "vs-seti",
+  "eslint.validate": ["javascript", "typescript"],
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "editor.fontLigatures": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDragAndDrop": false,
+  "cSpell.userWords": [
+    "DATEONLY",
+    "Gomla",
+    "Mokhtar",
+    "alaadin",
+    "attributevalues",
+    "clienttypes",
+    "codelyzer",
+    "devkit",
+    "downlevel",
+    "endregion",
+    "esnext",
+    "fawzy",
+    "fawzymokhtar",
+    "gmail",
+    "jasminewd",
+    "lifecycle",
+    "maxlength",
+    "minlength",
+    "mixins",
+    "mutex",
+    "originalname",
+    "parens",
+    "productattributes",
+    "productcategories",
+    "productmanufacturers",
+    "quotemark",
+    "scroller",
+    "tslib",
+    "userroles",
+    "usertypes",
+    "الدخول",
+    "الرقم",
+    "السري",
+    "المختار",
+    "المستخدم",
+    "تسجيل",
+    "للبرمجيات"
+  ],
+  "editor.gotoLocation.multiple": "goto",
+  "window.newWindowDimensions": "maximized",
+  "typescript.implementationsCodeLens.enabled": true,
+  "typescript.referencesCodeLens.enabled": true,
+  "typescript.surveys.enabled": false,
+  "javascript.referencesCodeLens.enabled": true,
+  "[css]": {
+    "editor.defaultFormatter": "aeschli.vscode-css-formatter"
+  },
+  "typescript.format.insertSpaceAfterConstructor": true,
+  "files.insertFinalNewline": true,
+  "javascript.format.insertSpaceAfterConstructor": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+  "files.trimTrailingWhitespace": true,
+  "javascript.referencesCodeLens.showOnAllFunctions": true,
+  "typescript.referencesCodeLens.showOnAllFunctions": true,
+  "mssql.connections": [
+    {
+      "server": "localhost",
+      "database": "",
+      "authenticationType": "SqlLogin",
+      "user": "sa",
+      "password": "",
+      "emptyPasswordInput": false,
+      "savePassword": true,
+      "profileName": "MS SQL Local Machine(sa)"
+    }
+  ],
+  "prettier.packageManager": "yarn",
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "Visual Studio 2017 Dark - C++",
+  "window.restoreFullscreen": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.preferences.quoteStyle": "single",
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "javascript.preferences.quoteStyle": "single",
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "eslint.packageManager": "yarn",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "omnisharp.useEditorFormattingSettings": false,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.minimap.enabled": false,
+  "docomment.advanced": {
+    "cs": {
+      "property": {
+        "attributes": ["summary"]
+      }
+    }
+  },
+  "cSpell.words": ["Amiri", "Pdfmake", "bolditalics", "صلاحية", "موجوده"]
+}

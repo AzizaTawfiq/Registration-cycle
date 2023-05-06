@@ -1,0 +1,276 @@
+<!-- Business information starts-->
+<section>
+  <div class="container">
+    <div class="row g-0">
+      <div class="col-md-4 mb-0 mb-lg-0 d-lg-block custom-btn">
+        <div class="mt-3 mb-5">
+          <img src="assets/imgs/glamera.png" class="my-5 mx-5" alt="" />
+        </div>
+        <p class="fw-bold mx-5 fs-4">
+          Few clicks away from creating your business
+        </p>
+        <p class="mx-5">
+          Starts your business in minutes.<br />
+          Save time and money
+        </p>
+        <div class="mb-0 d-flex align-items-end">
+          <img src="assets/imgs/image-footer.png" width="100%" alt="" />
+        </div>
+      </div>
+      <div class="col-md-8 mb-5 mb-lg-0" style="background-color: #f5f6f9">
+        <div class="card-body p-5">
+          <p class="float-start mt-5">
+            <i class="fa fa-long-arrow-left" style="padding-left: 40px"></i>
+          </p>
+          <p class="float-end">
+            Having a trouble ?
+            <a
+              [routerLink]="['/']"
+              class="fw-bold text-decoration-none bold custom-color"
+              >Get help</a
+            >
+          </p>
+          <h2 class="fw-bold mt-5 pt-5">Choose the type of business</h2>
+          <p class="mb-5">
+            To get start tell us what type of business you are going to
+            <br />
+            incorporate and name
+          </p>
+          <form [formGroup]="form" (ngSubmit)="submit()" #userForm="ngForm">
+            <div class="row">
+              <div class="form-group col-md-12 mb-4">
+                <label class="form-label" for="businessType"
+                  >Business type</label
+                >
+                <input
+                  type="text"
+                  id="businessType"
+                  class="form-control round"
+                  [placeholder]="'Enter business type'"
+                  formControlName="businessType"
+                  value="Glamera"
+                />
+                <div
+                  *ngIf="
+                    businessType?.invalid &&
+                    (businessType?.dirty || businessType?.touched)
+                  "
+                  class="text-danger"
+                >
+                  <small *ngIf="businessType?.hasError('required')">
+                    Business type is required.
+                  </small>
+                  <small *ngIf="businessType?.hasError('minLength')">
+                    The minimum length for business type is 1 character.
+                  </small>
+                  <small *ngIf="businessType?.hasError('maxLength')">
+                    The maximum length for business type is 100 characters.
+                  </small>
+                </div>
+              </div>
+              <div class="form-group col-12 mt-2 mb-2">
+                <label class="form-label" for="businessType"
+                  >Business type</label
+                >
+                <div class="d-flex justify-content-between">
+                  <div class="bg-white">
+                    <input
+                      mdbCheckbox
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check1"
+                      autocomplete="off"
+                    />
+                    <label class="btn" for="btn-check1"
+                      ><span class="border border-success text-dark p-0 mx-1">
+                        <i class="fa fa-scissors mx-3 fa-lg"></i></span
+                      >Salon
+                    </label>
+                  </div>
+                  <div class="bg-white">
+                    <input
+                      mdbCheckbox
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check2"
+                      autocomplete="off"
+                    />
+                    <label class="btn" for="btn-check2"
+                      ><span class="border border-success text-dark p-0 mx-1">
+                        <i class="fa fa-link mx-3 fa-lg"></i></span
+                      >Gym
+                    </label>
+                  </div>
+                  <div class="bg-white">
+                    <input
+                      mdbCheckbox
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check3"
+                      autocomplete="off"
+                    />
+                    <label class="btn" for="btn-check3"
+                      ><span class="border border-success text-dark p-0 mx-1">
+                        <i class="fa fa-wheelchair mx-3 fa-lg"></i></span
+                      >Spa
+                    </label>
+                  </div>
+                  <div class="bg-white">
+                    <input
+                      mdbCheckbox
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check4"
+                      autocomplete="off"
+                    />
+                    <label class="btn" for="btn-check4"
+                      ><span class="border border-success text-dark p-0 mx-1">
+                        <i class="fa fa-headphones mx-3 fa-lg"></i></span
+                      >Clinic
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="governorateId">Governorate</label>
+                <ng-select
+                  class="round"
+                  formControlName="governorateId"
+                  labelForId="governorateId"
+                  [searchable]="true"
+                  placeholder="Select governorate"
+                  notFoundText="There are no results"
+                >
+                  <ng-option
+                    *ngFor="let governorate of governorates"
+                    [value]="governorate.id"
+                  >
+                    {{ governorate.name }}
+                  </ng-option>
+                </ng-select>
+                <div
+                  *ngIf="
+                    governorate?.invalid &&
+                    (governorate?.dirty || governorate?.touched)
+                  "
+                  class="text-danger"
+                >
+                  <small *ngIf="governorate?.hasError('required')">
+                    Governorate is required.
+                  </small>
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="districtId">District</label>
+                <ng-select
+                  class="round"
+                  formControlName="districtId"
+                  labelForId="districtId"
+                  [searchable]="true"
+                  placeholder="Select district"
+                  notFoundText="There are no results"
+                >
+                  <ng-option
+                    *ngFor="let district of districts"
+                    [value]="district.id"
+                  >
+                    {{ district.name }}
+                  </ng-option>
+                </ng-select>
+                <div
+                  *ngIf="
+                    district?.invalid && (district?.dirty || district?.touched)
+                  "
+                  class="text-danger"
+                >
+                  <small *ngIf="district?.hasError('required')">
+                    District is required.
+                  </small>
+                </div>
+              </div>
+              <div class="form-group col-md-6 mt-3">
+                <label for="contactMethodId">How did you know us ?</label>
+                <ng-select
+                  class="round"
+                  formControlName="contactMethodId"
+                  labelForId="contactMethodId"
+                  [searchable]="true"
+                  placeholder="Select contact method"
+                  notFoundText="There are no results"
+                >
+                  <ng-option
+                    *ngFor="let contactMethod of contactMethods"
+                    [value]="contactMethod.id"
+                  >
+                    <i class="{{ contactMethod.icon }}"></i>
+                    {{ contactMethod.name }}
+                  </ng-option>
+                </ng-select>
+                <div
+                  *ngIf="
+                    contactMethod?.invalid &&
+                    (contactMethod?.dirty || contactMethod?.touched)
+                  "
+                  class="text-danger"
+                >
+                  <small *ngIf="contactMethod?.hasError('required')">
+                    contact method is required.
+                  </small>
+                </div>
+              </div>
+              <div class="form-group col-md-6 mt-3">
+                <label for="isUsingSystem"
+                  >Are you currently using system ?</label
+                >
+                <div class="custom-control custom-radio d-flex mt-2">
+                  <div>
+                    <input
+                      type="radio"
+                      id="radio1"
+                      value="radio1"
+                      name="isUsingSystem"
+                      class="custom-control-input pointer"
+                      formControlName="isUsingSystem"
+                    />
+                    <label
+                      class="custom-control-label pointer mx-2"
+                      for="radio1"
+                      >Yes</label
+                    >
+                  </div>
+                  <div class="mx-5">
+                    <input
+                      type="radio"
+                      id="radio2"
+                      value="radio2"
+                      class="custom-control-input pointer"
+                      formControlName="isUsingSystem"
+                    />
+                    <label
+                      class="custom-control-label pointer mx-2"
+                      for="radio2"
+                      >No</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="float-end mt-5 mb-5">
+              <button
+                type="submit"
+                class="btn btn-raised round custom-btn px-3"
+              >
+                <span class="mx-1 text-uppercase">Create account</span>
+                <i
+                  class="fa fa-long-arrow-right"
+                  style="padding-left: 40px"
+                ></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Business information ends -->
